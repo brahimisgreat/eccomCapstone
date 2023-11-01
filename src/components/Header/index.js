@@ -21,11 +21,11 @@ export default function Header() {
             </svg>
             <span className="ml-3 text-xl">eStore</span>
           </Link>
-          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-5 hover:text-gray-900">First Link</a>
-            <a className="mr-5 hover:text-gray-900">Second Link</a>
-            <a className="mr-5 hover:text-gray-900">Third Link</a>
-            <a className="mr-5 hover:text-gray-900">Fourth Link</a>
+          <nav className="md:ml-auto flex flex-wrap items-center  mr-10 text-base justify-center">
+            <Link  to='/' className="mr-5 hover:text-gray-900">Home</Link>
+            <Link to='/products' className="mr-5 hover:text-gray-900">Products</Link>
+            <Link to='/about' className="mr-5 hover:text-gray-900">About</Link>
+            <Link to='/contact' className="mr-5 hover:text-gray-900">contact</Link>
           </nav>
           <button className="inline-flex items-center text-white bg-indigo-500 border-0 py-2 px-3 focus:outline-none hover:bg-indigo-700 rounded text-base mt-4 md:mt-0">
             Go To Cart
