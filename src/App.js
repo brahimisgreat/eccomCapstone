@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import {Routes, Route} from 'react-router-dom'
 import Product from './modules/product';
 import Productss from './modules/productss';
+import CategoryProduct from './modules/CategoryProducts';
 
 function App() {
   return (
@@ -14,8 +15,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/product/:id' element={<Product />}/>
-        <Route path='/productss' element={<Productss />}/>
+        <Route path='/products' element={<Productss />}/>
+        <Route path='/categories/:name' element={<CategoryProduct />}/>
 
+        
       </Routes>
       <Footer />
     </div>

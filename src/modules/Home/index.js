@@ -3,6 +3,8 @@ import Hero from "../../components/Hero";
 import ProductsCard from "../../components/ProductsCard";
 import FeatureCard from "../../components/FeatureCard";
 import StatCard from "../../components/StatCard";
+import Categories from "../../components/Categories";
+import Productss from "../productss";
 
 export default function Home() {
 
@@ -23,7 +25,7 @@ useEffect(()=>{
   return (
     <>
       <Hero />
-      <FeatureCard />
+      <Categories />
       <div className="flex flex-col text-center w-full mt-20">
         <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">PRODUCTS</h2>
         <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">MOST POPULAR PRODUCTS</h1>
@@ -32,7 +34,7 @@ useEffect(()=>{
         products.length > 0 ? <ProductsCard products={products} />: <div>Loading.....</div>
       }
         
-      <ProductsCard />
+      <Productss/>
       
       <StatCard />
     </>
