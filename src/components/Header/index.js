@@ -27,6 +27,8 @@ export default function Header() {
             <Link to='/about' className="mr-5 hover:text-gray-900">About</Link>
             <Link to='/contact' className="mr-5 hover:text-gray-900">contact</Link>
           </nav>
+          <Link to='/cart'>
+
           <button className="inline-flex items-center text-white bg-indigo-500 border-0 py-2 px-3 focus:outline-none hover:bg-indigo-700 rounded text-base mt-4 md:mt-0">
             Go To Cart
             <svg
@@ -41,6 +43,7 @@ export default function Header() {
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </button>
+          </Link>
         </div>
       </header>
     </div>

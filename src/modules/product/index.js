@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Navigate,  useParams, useLocation, useNavigate } from "react-router-dom";
 
 export default function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   console.log(id, product);
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function fetchProducts() {
@@ -15,6 +16,31 @@ export default function Product() {
     }
     fetchProducts();
   }, []);
+
+   function  handleCart (product, redirect){
+
+      const cart= JSON.parse(localStorage.getItem('cart')) || [];
+      const isProductExist = cart.find(item => item.id === product.id)
+      if(isProductExist){
+        const updatedCart = cart.map(item  =>{
+          if(item.id === product.id) {
+            return {
+              ...item,
+              quantity: item.quantity + 1
+
+          }
+          }
+          return item
+        })
+        localStorage.setItem('cart', JSON.stringify(updatedCart))
+      }else{
+        localStorage.setItem('cart', JSON.stringify([...cart, {...product, quantity:1}]))
+      }
+      alert('Product added to cart')
+      if(redirect){
+         navigate('/cart')
+      }
+  }
 
   if(!Object.keys(product).length > 0){
       return <div>Loading</div>;
@@ -174,10 +200,10 @@ export default function Product() {
                   ${product?.price}
                 </span>
                 <div className="flex">
-                  <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded mr-2">
+                  <button  onClick={() => handleCart(product, true)} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded mr-2">
                     Buy It Now
                   </button>
-                  <button className="flex ml-auto   hover:text-white border border-indigo-500 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                  <button onClick={() => handleCart(product)} className="flex ml-auto   hover:text-white border border-indigo-500 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                     Add To Cart
                   </button>
                 </div>
