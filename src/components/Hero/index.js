@@ -1,4 +1,5 @@
 import React from "react";
+import tote from '../../assets/every-now-and-then-i-fall-apart-taco-bags.webp'
 
 export default function Hero() {
   return (
@@ -30,7 +31,7 @@ export default function Hero() {
             <img
               className="object-cover object-center rounded"
               alt="hero"
-              src="https://dummyimage.com/720x600"
+              src={tote}
             />
           </div>
         </div>
