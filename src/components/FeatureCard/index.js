@@ -3,15 +3,15 @@ import hero from '../../assets/hero-1.jpg'
 import { Link } from "react-router-dom";
 import purp from '../../assets/purple.jpeg'
 import en from '../../assets/engage.png'
+import './index.css'
 
 export default function FeatureCard({cards = [1,2,3]}) {
   return (
     <div>
       <section className="text-gray-600 body-font ">
-        <div className="container px-5 py-24 mx-auto border relative ">
+        <div className="container px-5 py-24 mx-auto  relative ">
         <img src={purp} className="invisible absolute w-1/2 -z-50 w-96 md:visible md:left-1/3 md:w-3/5   " alt="food" />
-        <img src={en} className="invisible absolute w-1/2 -z-50 w-96 md:visible md:left-1/3 md:w-3/5 md:top-1/3  " alt="food" />
-        <img src={purp} className="invisible absolute w-1/2 -z-50 w-96 md:visible md:left-1/3 md:w-3/5 md:top-96+1  " alt="food" />
+        <img src={en} className="eng invisible absolute w-1/2 -z-50 w-96 md:visible md:left-1/3 md:w-3/5 md:top-1/3 lg:top-2/3   " alt="food" />
           {
             cards?.map((card)=>{
               return(
