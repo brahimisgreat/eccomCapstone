@@ -19,7 +19,7 @@ export default function Categories() {
   
   
     return (
-      <div>
+      <div className='flex flex-col border'>
       <FeatureCard cards={category}/>
       
       </div>
